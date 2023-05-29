@@ -10,7 +10,7 @@ def get_data(path):
         dictionary[T.hour * 60 + T.minute].append(H)
     for key in dictionary.keys():
         dictionary[key] = np.mean(dictionary[key])
-    return dictionary, key
+    return dictionary
 
 def check_None(dictionary, max_time):
     lists = []
