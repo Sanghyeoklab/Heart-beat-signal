@@ -37,3 +37,11 @@ def linear_projection(y):
     x = np.concatenate((x, np.ones(x.shape)), 1)
     y = np.array(y).reshape(-1, 1).astype(np.float64)
     return np.dot(np.linalg.inv(np.dot(x.T, x)), np.dot(x.T, y))
+
+
+def correlation_coefficient(a, b):
+    a = a - np.mean(a)
+    b = b - np.mean(b)
+    num = np.sum(a * b)
+    denum = np.sqrt(np.sum(a ** 2) * np.sum(b ** 2))
+    return num / denum
